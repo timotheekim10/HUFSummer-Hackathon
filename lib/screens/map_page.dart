@@ -20,4 +20,9 @@ class _MapPageState extends State<MapPage> {
       body: Container(),
     );
   }
+<<<<<<< Updated upstream
 }
+=======
+}
+
+>>>>>>> Stashed changes
