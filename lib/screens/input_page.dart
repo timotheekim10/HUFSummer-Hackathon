@@ -79,7 +79,7 @@ class _InputPageState extends State<InputPage> {
                   ),
                 );
               } catch (e) {
-                print("Error: 입력값이 숫자가 아님");
+                print("Error: 입력값이 옳지 않음");
               }
             },
           ),
