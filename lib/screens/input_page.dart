@@ -11,7 +11,7 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
 
   int budget = 0;
-  int university = 0;
+  String university = "";
   final budgetController = TextEditingController();
   final universityController = TextEditingController();
 
@@ -72,7 +72,7 @@ class _InputPageState extends State<InputPage> {
             onPressed: () {
               try {
                 budget = int.parse(budgetController.text);
-                university = int.parse(universityController.text);
+                university = universityController.text;
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (_) => MapPage(budget: budget, university: university),
