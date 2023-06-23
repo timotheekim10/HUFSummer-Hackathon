@@ -13,33 +13,14 @@ class MapPage extends StatefulWidget {
 }
 
 class _MapPageState extends State<MapPage> {
-<<<<<<< HEAD
-=======
   late String restaurant = 'restaurant';
 
->>>>>>> 형근
   void _showBottomSheet() {
     showModalBottomSheet(
       context: context,
       builder: (context) {
         return Padding(
-<<<<<<< HEAD
-          padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 40),
-          child: Container(
-            height: 200,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              color: Colors.green,
-            ),
-            child: Center(
-              child: Text(
-                '식당이름',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  color: Color(0xff8BC34A),
-                ),
-              ),
-=======
+
           padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 40),
           child: Container(
             decoration: BoxDecoration(
@@ -63,7 +44,6 @@ class _MapPageState extends State<MapPage> {
                   ),
                 ),
               ],
->>>>>>> 형근
             ),
           ),
         );
@@ -76,35 +56,12 @@ class _MapPageState extends State<MapPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-<<<<<<< HEAD
 
-=======
->>>>>>> 형근
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
-<<<<<<< HEAD
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
-              child: Container(
-                height: 40,
-                child: TextButton(
-                  style: TextButton.styleFrom(
-                    backgroundColor: Color(0xff8BC34A),
-
-                  ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: Text(
-                    '${widget.budget}원으로 먹을 수 있는 ${widget.university} 근처 식당',
-                    style: TextStyle(
-                      fontSize: 17.0,
-                      color: Colors.white,
-                    ),
-                  ),
-=======
               padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
               child: TextButton(
                 style: ButtonStyle(
@@ -138,7 +95,6 @@ class _MapPageState extends State<MapPage> {
                       color: Colors.black,
                     )
                   ],
->>>>>>> 형근
                 ),
               ),
             ),
