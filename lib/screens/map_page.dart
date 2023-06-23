@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MapPage extends StatefulWidget {
 
   final int budget;
-  final int university;
+  final String university;
 
 
   const MapPage({Key? key, required this.budget, required this.university}) : super(key: key);
@@ -17,7 +17,12 @@ class _MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(),
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10.0),
+          child: TextButton(onPressed: (){}, child: Text('data')),
+        ),
+      ),
     );
   }
 }
