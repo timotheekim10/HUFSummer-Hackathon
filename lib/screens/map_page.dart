@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_naver_map/flutter_naver_map.dart';
-
 
 class MapPage extends StatefulWidget {
   final int budget;
@@ -14,26 +12,31 @@ class MapPage extends StatefulWidget {
 }
 
 class _MapPageState extends State<MapPage> {
-  NaverMapController? _controller;
-
   void _showBottomSheet() {
     showModalBottomSheet(
       context: context,
       builder: (context) {
-        return Container(
-          height: 200,
-          color: Colors.green,
-          child: Center(
-            child: Text(
-              'Hello Bottom Sheet',
-              style: TextStyle(
-                fontSize: 20.0,
-                color: Colors.white,
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 40),
+          child: Container(
+            height: 200,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              color: Colors.green,
+            ),
+            child: Center(
+              child: Text(
+                '식당이름',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Color(0xff8BC34A),
+                ),
               ),
             ),
           ),
         );
       },
+      barrierColor: Colors.transparent,
     );
   }
 
@@ -41,43 +44,31 @@ class _MapPageState extends State<MapPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
-              padding: const EdgeInsets.all(20),
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.green,
-                ),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Text(
-                  '${widget.university}, ${widget.budget}',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    color: Colors.white,
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+              child: Container(
+                height: 40,
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Color(0xff8BC34A),
+
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    '${widget.budget}원으로 먹을 수 있는 ${widget.university} 근처 식당',
+                    style: TextStyle(
+                      fontSize: 17.0,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
-              ),
-            ),
-            Expanded(
-              child: NaverMap(
-                options: NaverMapViewOptions(
-                  initialCameraPosition: NCameraPosition(
-                      target: NLatLng(0, 0),
-                      zoom: 10,
-                      bearing: 0,
-                      tilt: 0
-                  ),
-                ),
-                onMapReady: (controller) {
-                  setState(() {
-                    _controller = controller;
-                  });
-                },
               ),
             ),
           ],
