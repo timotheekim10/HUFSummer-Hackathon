@@ -60,7 +60,7 @@ class _InputPageState extends State<InputPage> {
           padding: const EdgeInsets.all(8.0),
           child: TextButton(
             style: TextButton.styleFrom(
-              backgroundColor: Colors.green,
+              backgroundColor: Colors.lightGreen,
             ),
             child: Text(
               '확인',
