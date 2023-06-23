@@ -9,6 +9,19 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+
+  int budget = 0;
+  int university = 0;
+  final budgetController = TextEditingController();
+  final universityController = TextEditingController();
+
+  @override
+  void dispose() {
+    budgetController.dispose();
+    universityController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -20,7 +33,8 @@ class _InputPageState extends State<InputPage> {
           child: SizedBox(
             width: 300,
             child: TextField(
-              obscureText: true,
+              controller: budgetController,
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: '예산',
@@ -33,10 +47,11 @@ class _InputPageState extends State<InputPage> {
           child: SizedBox(
             width: 300,
             child: TextField(
-              obscureText: true,
+              controller: universityController,
+              keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: '대학교 선택',
+                labelText: '대학',
               ),
             ),
           ),
@@ -55,8 +70,17 @@ class _InputPageState extends State<InputPage> {
               ),
             ),
             onPressed: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (_) => MapPage()));
+              try {
+                budget = int.parse(budgetController.text);
+                university = int.parse(universityController.text);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => MapPage(budget: budget, university: university),
+                  ),
+                );
+              } catch (e) {
+                print("Error: 입력값이 숫자가 아님");
+              }
             },
           ),
         ),
@@ -64,3 +88,4 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
+
