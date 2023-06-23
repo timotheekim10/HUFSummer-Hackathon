@@ -87,9 +87,4 @@ class _InputPageState extends State<InputPage> {
       ],
     );
   }
-<<<<<<< HEAD
 }
-
-=======
-}
->>>>>>> 형근
