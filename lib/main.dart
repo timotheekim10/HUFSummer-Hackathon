@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:projects/screens/input_page.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +20,7 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(),
         home: Scaffold(
-          backgroundColor: Colors.white60,
+          backgroundColor: Colors.white,
           body: SafeArea(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 10.0),
@@ -27,19 +29,5 @@ class _MyAppState extends State<MyApp> {
           ),
         )
     );
-  }
-}
-
-class InputPage extends StatefulWidget {
-  const InputPage({Key? key}) : super(key: key);
-
-  @override
-  State<InputPage> createState() => _InputPageState();
-}
-
-class _InputPageState extends State<InputPage> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }
