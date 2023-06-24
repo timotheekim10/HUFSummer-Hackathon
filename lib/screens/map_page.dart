@@ -14,15 +14,16 @@ class MapPage extends StatefulWidget {
 
 class _MapPageState extends State<MapPage> {
   late String restaurant = 'restaurant';
+  late int howFar = 1;
 
   void _showBottomSheet() {
     showModalBottomSheet(
       context: context,
       builder: (context) {
         return Padding(
-
           padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 40),
           child: Container(
+            margin: EdgeInsets.all(30),
             decoration: BoxDecoration(
               color: Colors.white60,
               borderRadius: BorderRadius.circular(15),
@@ -33,15 +34,23 @@ class _MapPageState extends State<MapPage> {
             ),
             height: 200,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   '${restaurant}',
                   style: GoogleFonts.urbanist(
-                    textStyle: Theme.of(context).textTheme.displayLarge,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black
-                  ),
+                      textStyle: Theme.of(context).textTheme.displayLarge,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.black),
+                ),
+                Text(
+                  '${howFar}.',
+                  style: GoogleFonts.urbanist(
+                      textStyle: Theme.of(context).textTheme.displayLarge,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.black),
                 ),
               ],
             ),
@@ -56,7 +65,6 @@ class _MapPageState extends State<MapPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
